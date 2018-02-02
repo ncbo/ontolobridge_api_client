@@ -1,5 +1,7 @@
-function ajaxCall(formId, respContainerDivId, respDivId, errDivId, method, action) {
+function ajaxCall(formId, respContainerDivId, respDivId, errDivId, loadingDivId, method, action) {
   clearResults(respDivId, errDivId);
+  $('#' + respContainerDivId).show();
+  $('#' + loadingDivId).show();
   var params = $("#" + formId).serialize();
 
   $.ajax({
@@ -22,7 +24,7 @@ function ajaxCall(formId, respContainerDivId, respDivId, errDivId, method, actio
       showError(errDivId, request.status + ": " + errorThrown);
     },
     complete: function(request, textStatus) {
-      $('#' + respContainerDivId).show();
+      $('#' + loadingDivId).hide();
     }
   });
 }
@@ -81,12 +83,12 @@ function isUrlValid(url) {
 
 $(document).ready(function () {
   $("#term-status-form").on("submit", function () {
-    ajaxCall("term-status-form", "term-status-resp-container", "term-status-resp", "term-status-err", "post", "term_status");
+    ajaxCall("term-status-form", "term-status-resp-container", "term-status-resp", "term-status-err", "term-status-loading", "post", "term_status");
     return false;
   });
 
   $("#request-term-form").on("submit", function () {
-    ajaxCall("request-term-form", "request-term-resp-container", "request-term-resp", "request-term-err", "post", "request_term");
+    ajaxCall("request-term-form", "request-term-resp-container", "request-term-resp", "request-term-err", "request-term-loading", "post", "request_term");
     return false;
   });
 });

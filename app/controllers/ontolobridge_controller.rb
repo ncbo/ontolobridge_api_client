@@ -16,6 +16,7 @@ class OntolobridgeController < ApplicationController
     endpoint = "/TermStatus"
 
     begin
+      sleep 1
       response_raw = nil
 
       if method.upcase == "POST"
@@ -33,6 +34,7 @@ class OntolobridgeController < ApplicationController
   end
 
   def request_term
+    sleep 1
     response = {}
     endpoint = "/RequestTerm"
     h_params = {}
