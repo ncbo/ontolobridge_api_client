@@ -9,6 +9,7 @@ Steps to deploy:
 3. Edit config/database.yml and add your db user credentials.
 4. Copy config/ontolobridge_config.rb.sample to config/ontolobridge_config.rb
 5. Start server (rails s) 
+6. Navigate to http://localhost:3000 (or whatever host/port the site runs on)
 
 Run unit tests:
 ---------------
