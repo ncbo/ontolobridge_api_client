@@ -1,4 +1,4 @@
-Ontolobridge API Client
+Ontolobridge REST API Client
 =======================
 A rails implementation of a client disigned to test the Ontolobridge REST endpoints.
 
