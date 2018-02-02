@@ -14,3 +14,7 @@ Steps to deploy:
 Run unit tests:
 ---------------
 bin/rails test
+
+Screenshot:
+-----------
+![alt text](https://raw.githubusercontent.com/ncbo/ontolobridge_api_client/master/app/assets/images/screen-shot.png)
