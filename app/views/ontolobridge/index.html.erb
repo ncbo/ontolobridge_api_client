@@ -1,0 +1,98 @@
+      <div class="global_container">
+        <h1>Ontolobridge API Test</h1>
+
+        <div class="aParent">
+          <div class="container">
+            <form id="term-status-form" method="post" class="main_form">
+              <h3>GET/POST: /TermStatus</h3>
+              <h4>Gets the status of a current term</h4>
+              <fieldset>
+                <input placeholder="Enter Term Id (required)" type="number" min="1" step="1"
+                       id="term_id" name="term_id" tabindex="1" required class="req" autofocus
+                       oninvalid="this.setCustomValidity('Please enter a valid term id (integer)')"
+                       oninput="setCustomValidity('')" />
+              </fieldset>
+              <fieldset>
+                <input type="radio" id="method_get" name="request_method" value="get" checked>
+                <label class="radio_label" for="method_get">GET</label>
+                <input type="radio" id="method_post" name="request_method" value="post">
+                <label class="radio_label" for="method_post">POST</label>
+              </fieldset>
+              <fieldset>
+                <button name="submit" type="submit" data-submit="Sending...">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+
+          <div id="term-status-resp-container" class="main_form message" style="display:none;">
+            <h3>Response:</h3>
+            <div id="term-status-resp" style="display:none;"></div>
+            <div id="term-status-err" style="display:none;"></div>
+          </div>
+        </div>
+        <br style="clear:both;"/>
+        <div class="aParent">
+          <div class="container">
+            <form id="request-term-form" method="post" class="main_form">
+              <h3>POST: /RequestTerm</h3>
+              <h4>Generates a new term request</h4>
+              <fieldset>
+                <input placeholder="Enter term label (required)"
+                       type="text" id="label" name="label" tabindex="2" required class="req"
+                       oninvalid="this.setCustomValidity('Please enter a label for a new term')"
+                       oninput="setCustomValidity('')" />
+              </fieldset>
+              <fieldset>
+                <textarea placeholder="Enter term description (required)"
+                          id="description" name="description" tabindex="3" required class="req"
+                          oninvalid="this.setCustomValidity('Please enter a description for a new term')"
+                          oninput="setCustomValidity('')"></textarea>
+              </fieldset>
+              <fieldset>
+                <input placeholder="Enter term superclass - it can be a Curie or IRI (required)"
+                       type="text" id="superclass" name="superclass" tabindex="4" required class="req"
+                       oninvalid="this.setCustomValidity('Please enter a superclass for a new term. Superclass can be a Curie or IRI.')"
+                       oninput="setCustomValidity('')" />
+              </fieldset>
+              <fieldset>
+                <input placeholder="Enter references - links (either URIs or URLs) that provide more information about the term"
+                       type="text" id="references" name="references" tabindex="5"
+                       oninvalid="this.setCustomValidity('Please enter references for a new term. References are any links (either URIs or URLs) that provide more information about the term.')"
+                       oninput="setCustomValidity('')" />
+              </fieldset>
+              <fieldset>
+                <textarea placeholder="Enter justification for term - notes provided by the submitter to justify the term"
+                          id="justification" name="justification" tabindex="6"
+                          oninvalid="this.setCustomValidity('Please enter a justification. Justifications are notes provided by the submitter to justify the term; often this will not be necessary, since for most routine cases the label/description/position will be sufficient, but sometimes it may be necessary to justify why a new term is necessary.')"
+                          oninput="setCustomValidity('')"></textarea>
+              </fieldset>
+              <fieldset>
+                <input placeholder="Enter term submitter (organization, name, contact method, contact Id, submitter Id (e.g., ORCID)): who asked for it - the contact details should stay private"
+                       type="text" id="submitter" name="submitter" tabindex="7"
+                       oninvalid="this.setCustomValidity('Please enter a submitter (organization, name, contact method, contact Id, submitter Id (e.g., ORCID)): who asked for it - the contact details should stay private.')"
+                       oninput="setCustomValidity('')" />
+              </fieldset>
+              <fieldset>
+                <input placeholder="Enter submitter email - the contact email of who submitted the request"
+                       type="email" id="submitter_email" name="submitter_email" tabindex="8"
+                       oninvalid="this.setCustomValidity('Please enter a valid submitter email - the contact email of who submitted the request.')"
+                       oninput="setCustomValidity('')" />
+              </fieldset>
+              <fieldset>
+                <input type="checkbox" id="notification_request" name="notification_request"  tabindex="9">
+                <label class="radio_label" for="notification_request">Email submitter when there is a status change</label>
+              </fieldset>
+              <fieldset>
+                <button name="submit" type="submit" data-submit="Sending...">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+          <div id="request-term-resp-container" class="main_form message" style="display:none;">
+            <h3>Response:</h3>
+            <div id="request-term-resp" style="display:none;"></div>
+            <div id="request-term-err" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+
+
