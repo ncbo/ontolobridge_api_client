@@ -1,27 +1,15 @@
-# README
+Ontolobridge API Client
+=======================
+A rails implementation of a client disigned to test the Ontolobridge REST endpoints.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Steps to deploy:
+----------------
+1. Clone repo and run bundle install
+2. Copy config/database.yml.sample to config/database.yml
+3. Edit config/database.yml and add your db user credentials.
+4. Copy config/ontolobridge_config.rb.sample to config/ontolobridge_config.rb
+5. Start server (rails s) 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
-# ontolobridge_api_client
-Ontolobridge REST API client
+Run unit tests:
+---------------
+bin/rails test
