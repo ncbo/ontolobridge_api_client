@@ -23,6 +23,7 @@ projectFilesBackup/
 .DS_Store
 
 config/database.yml
+config/secrets.yml
 config/ontolobridge_config.rb
 
 # Ignore editor files
