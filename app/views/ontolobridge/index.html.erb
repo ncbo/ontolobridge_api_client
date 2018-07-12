@@ -56,31 +56,48 @@
                        oninput="setCustomValidity('')" />
               </fieldset>
               <fieldset>
+                <input placeholder="Enter type of object - it can be 'Term', 'Objectproperty', or 'Dataproperty'"
+                       type="text" id="type" name="type" tabindex="5"
+                       oninvalid="this.setCustomValidity('A type of object being requested, can be a Term, Objectproperty, or Dataproperty.')"
+                       oninput="setCustomValidity('')" />
+              </fieldset>
+<!--
+              <fieldset>
+                <select name="type" id="type" tabindex="5">
+                  <option value="">Please select type:</option>
+                  <option value="Term">Term</option>
+                  <option value="Objectproperty">Objectproperty</option>
+                  <option value="Dataproperty">Dataproperty</option>
+                </select>
+                <br/>A type of object being requested, can be a Term, Objectproperty, or Dataproperty Currently
+              </fieldset>
+-->
+              <fieldset>
                 <input placeholder="Enter references - links (either URIs or URLs) that provide more information about the term"
-                       type="text" id="references" name="references" tabindex="5"
+                       type="text" id="references" name="references" tabindex="6"
                        oninvalid="this.setCustomValidity('Please enter references for a new term. References are any links (either URIs or URLs) that provide more information about the term.')"
                        oninput="setCustomValidity('')" />
               </fieldset>
               <fieldset>
                 <textarea placeholder="Enter justification for term - notes provided by the submitter to justify the term"
-                          id="justification" name="justification" tabindex="6"
+                          id="justification" name="justification" tabindex="7"
                           oninvalid="this.setCustomValidity('Please enter a justification. Justifications are notes provided by the submitter to justify the term; often this will not be necessary, since for most routine cases the label/description/position will be sufficient, but sometimes it may be necessary to justify why a new term is necessary.')"
                           oninput="setCustomValidity('')"></textarea>
               </fieldset>
               <fieldset>
                 <input placeholder="Enter term submitter (organization, name, contact method, contact Id, submitter Id (e.g., ORCID)): who asked for it - the contact details should stay private"
-                       type="text" id="submitter" name="submitter" tabindex="7"
+                       type="text" id="submitter" name="submitter" tabindex="8"
                        oninvalid="this.setCustomValidity('Please enter a submitter (organization, name, contact method, contact Id, submitter Id (e.g., ORCID)): who asked for it - the contact details should stay private.')"
                        oninput="setCustomValidity('')" />
               </fieldset>
               <fieldset>
                 <input placeholder="Enter submitter email - the contact email of who submitted the request"
-                       type="email" id="submitter_email" name="submitter_email" tabindex="8"
+                       type="email" id="submitter_email" name="submitter_email" tabindex="9"
                        oninvalid="this.setCustomValidity('Please enter a valid submitter email - the contact email of who submitted the request.')"
                        oninput="setCustomValidity('')" />
               </fieldset>
               <fieldset>
-                <input type="checkbox" id="notification_request" name="notification_request"  tabindex="9">
+                <input type="checkbox" id="notification_request" name="notification_request"  tabindex="10">
                 <label class="radio_label" for="notification_request">Email submitter when there is a status change</label>
               </fieldset>
               <fieldset>
