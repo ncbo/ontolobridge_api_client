@@ -25,6 +25,7 @@ projectFilesBackup/
 config/database.yml
 config/secrets.yml
 config/ontolobridge_config.rb
+config/deploy
 
 # Ignore editor files
 .idea
