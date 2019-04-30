@@ -16,7 +16,7 @@ class OntolobridgeController < ApplicationController
 
     begin
       sleep 1
-      response_raw = RestClient.get("#{ONTOLOBRIDGE_BASE_URL}#{endpoint}", {params: {requestID: term_id}})
+      response_raw = RestClient.get("#{ONTOLOBRIDGE_BASE_URL}#{endpoint}", {params: {requestID: term_id, include: "all"}})
 
       if response_raw.body == "[]"
         response["error"] = "Term not found"
