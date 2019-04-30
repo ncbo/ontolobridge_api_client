@@ -11,21 +11,18 @@ class OntolobridgeController < ApplicationController
 
   def term_status
     term_id = params["term_id"]
-    method = params["request_method"]
-    response = {"term_id" => term_id, "method" => method}
-    endpoint = "/TermStatus"
+    response = {"term_id" => term_id}
+    endpoint = "/RequestStatus"
 
     begin
       sleep 1
-      response_raw = nil
+      response_raw = RestClient.get("#{ONTOLOBRIDGE_BASE_URL}#{endpoint}", {params: {requestID: term_id}})
 
-      if method.upcase == "POST"
-        response_raw = RestClient.post("#{ONTOLOBRIDGE_BASE_URL}#{endpoint}", {id: term_id})
+      if response_raw.body == "[]"
+        response["error"] = "Term not found"
       else
-        response_raw = RestClient.get("#{ONTOLOBRIDGE_BASE_URL}#{endpoint}", {params: {id: term_id}})
+        response.merge!(MultiJson.load(response_raw))
       end
-
-      response.merge!(MultiJson.load(response_raw))
     rescue Exception => e
       response["error"] = "Problem querying #{endpoint}: #{e.class} - #{e.message}"
     end

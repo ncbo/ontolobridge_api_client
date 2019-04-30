@@ -1,2 +1,2 @@
 # Organization info
-$ONTOLOBRIDGE_BASE_URL = "http://dev3.ccs.miami.edu:8080/ontolobridge/api"
+$ONTOLOBRIDGE_BASE_URL = "http://dev3.ccs.miami.edu:8080/ontolobridge-test/REST"

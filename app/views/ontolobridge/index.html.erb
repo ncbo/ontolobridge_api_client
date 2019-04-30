@@ -4,19 +4,13 @@
         <div class="aParent">
           <div class="container">
             <form id="term-status-form" method="post" class="main_form">
-              <h3>GET/POST: /TermStatus</h3>
+              <h3>GET: /RequestStatus</h3>
               <h4>Gets the status of a current term</h4>
               <fieldset>
                 <input placeholder="Enter Term Id (required)" type="number" min="1" step="1"
                        id="term_id" name="term_id" tabindex="1" required class="req" autofocus
                        oninvalid="this.setCustomValidity('Please enter a valid term id (integer)')"
                        oninput="setCustomValidity('')" />
-              </fieldset>
-              <fieldset>
-                <input type="radio" id="method_get" name="request_method" value="get" checked>
-                <label class="radio_label" for="method_get">GET</label>
-                <input type="radio" id="method_post" name="request_method" value="post">
-                <label class="radio_label" for="method_post">POST</label>
               </fieldset>
               <fieldset>
                 <button name="submit" type="submit" data-submit="Sending...">Submit</button>
