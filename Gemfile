@@ -27,6 +27,7 @@ gem 'pry'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rest-client'
+gem 'multi_json'
 
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
