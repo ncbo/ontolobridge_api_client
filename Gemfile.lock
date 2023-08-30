@@ -51,13 +51,13 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
-    capistrano-bundler (1.6.0)
+    capistrano-bundler (2.1.0)
       capistrano (~> 3.1)
     capistrano-passenger (0.2.1)
       capistrano (~> 3.0)
-    capistrano-rails (1.1.8)
-      capistrano (~> 3.1)
-      capistrano-bundler (~> 1.1)
+    capistrano-rails (1.1.0)
+      capistrano (>= 3.0.0)
+      capistrano-bundler (>= 1.0.0)
     capistrano-upload-config (0.9.0)
       capistrano (>= 3.0)
     capybara (2.18.0)
@@ -116,9 +116,9 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2023.0808)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.4)
     minitest (5.19.0)
-    mysql2 (0.4.10)
+    multi_json (1.15.0)
+    mysql2 (0.5.5)
     net-imap (0.3.7)
       date
       net-protocol
@@ -133,8 +133,7 @@ GEM
     net-ssh (7.2.0)
     netrc (0.11.0)
     nio4r (2.5.9)
-    nokogiri (1.15.4)
-      mini_portile2 (~> 2.8.2)
+    nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
     pry (0.14.2)
       coderay (~> 1.1)
@@ -238,7 +237,8 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  ruby
+  x86_64-linux
+  arm64-darwin-22
 
 DEPENDENCIES
   byebug
@@ -253,10 +253,11 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   listen (>= 3.0.5, < 3.2)
-  mysql2 (>= 0.3.18, < 0.5)
+  multi_json
+  mysql2 (~> 0.5)
   pry
   puma (~> 3.7)
-  rails (~> 5.1.4)
+  rails (~> 5.1.7)
   rest-client
   sass-rails (~> 5.0)
   selenium-webdriver
